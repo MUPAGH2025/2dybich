@@ -6,9 +6,9 @@ jobs:
         runs-on: ubuntu-22.04 # na czym ma działać
         steps:
             - run: sudo apt-get install inkscape pandoc texlive-xetex
-            # - uses: actions/checkout@v4
-            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib
-            # - run: python -m nbconvert --to pdf --execute pint_and_boiling_point.ipynb
+            - uses: actions/checkout@v4
+            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib pandoc inkscape
+            - run: python -m nbconvert --to pdf --execute main.ipynb
             # - uses: actions/upload-artifact@v4
             #   with:
-            #       path: pint_and_boiling_point.pdf
+            #       path: main.pdf
