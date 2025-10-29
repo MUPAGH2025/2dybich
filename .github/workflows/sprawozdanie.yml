@@ -7,8 +7,8 @@ jobs:
         steps:
             - run: sudo apt-get install inkscape pandoc texlive-xetex
             - uses: actions/checkout@v4
-            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib pandoc inkscape
+            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib
             - run: python -m nbconvert --to pdf --execute main.ipynb
-            # - uses: actions/upload-artifact@v4
-            #   with:
-            #       path: main.pdf
+            - uses: actions/upload-artifact@v4
+              with:
+                  path: main.pdf
