@@ -11,4 +11,4 @@ jobs:
             - run: python -m nbconvert --to pdf --execute labs/lab1/main.ipynb
             - uses: actions/upload-artifact@v4
               with:
-                  path: main.pdf
+                  path: labs/lab1/main.pdf
