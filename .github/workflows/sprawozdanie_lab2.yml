@@ -1,14 +1,13 @@
 name: sprawozdanie_lab2
 
-on: push # kod się wykona przy wykonaniu push'a
+on: push
 jobs:
     job:
-        runs-on: ubuntu-22.04 # na czym ma działać
+        runs-on: ubuntu-22.04
         steps:
-            # - run: sudo apt-get install inkscape pandoc texlive-xetex
             - uses: actions/checkout@v4
-            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib
+            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib # zamiast --to pdf dajemy -- to script i usuwamy niepotrzebne instalacje (np. latex), żeby nie czekać tak długo na wykonanie
             - run: python -m nbconvert --to script --execute labs/lab2/main.ipynb
             - uses: actions/upload-artifact@v4
               with:
-                  path: labs/lab2/lab2_anim.gif
+                  path: labs/lab2/lab2_anim.gif # zachowujemy tylko animację
