@@ -1,4 +1,4 @@
-name: sprawozdanie
+name: sprawozdanie_lab1
 
 on: push # kod się wykona przy wykonaniu push'a
 jobs:
@@ -8,7 +8,7 @@ jobs:
             - run: sudo apt-get install inkscape pandoc texlive-xetex
             - uses: actions/checkout@v4
             - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib
-            - run: python -m nbconvert --to pdf --execute main.ipynb
+            - run: python -m nbconvert --to pdf --execute labs/lab1/main.ipynb
             - uses: actions/upload-artifact@v4
               with:
                   path: main.pdf
