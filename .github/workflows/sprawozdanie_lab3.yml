@@ -1,0 +1,13 @@
+name: sprawozdanie_lab2
+
+on: push
+jobs:
+    job:
+        runs-on: ubuntu-22.04
+        steps:
+            - uses: actions/checkout@v4
+            - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib numpy pympdata # zamiast --to pdf dajemy -- to script i usuwamy niepotrzebne instalacje (np. latex), żeby nie czekać tak długo na wykonanie
+            - run: python -m nbconvert --to script --execute labs/lab3/main.ipynb
+            - uses: actions/upload-artifact@v4
+              with:
+                  path: labs/lab3/anim.gif # zachowujemy tylko animację

@@ -9,6 +9,8 @@ dependencies = [
     "matplotlib>=3.10.7",
     "numpy>=2.3.4",
     "open-atmos-jupyter-utils>=1.3.0",
-    "pint>=0.25",
+    "pint==0.24.4",
+    "pympdata>=1.6.3",
+    "scienceplots>=2.1.1",
     "scipy>=1.16.3",
 ]
