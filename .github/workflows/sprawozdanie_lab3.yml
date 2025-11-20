@@ -5,6 +5,7 @@ jobs:
     job:
         runs-on: ubuntu-22.04
         steps:
+            - run: sudo apt-get install inkscape pandoc texlive-xetex
             - uses: actions/checkout@v4
             - run: pip install ipykernel nbconvert pint open-atmos-jupyter-utils scipy matplotlib numpy pympdata scienceplots # zamiast --to pdf dajemy -- to script i usuwamy niepotrzebne instalacje (np. latex), żeby nie czekać tak długo na wykonanie
             - run: python -m nbconvert --to script --execute labs/lab3/main.ipynb
