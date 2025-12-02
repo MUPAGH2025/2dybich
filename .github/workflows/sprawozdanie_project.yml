@@ -33,8 +33,6 @@ jobs:
                       labs/project/one_step_result.pdf
                       labs/project/two_step_3D.pdf
                       labs/project/two_step_result.pdf
-                      labs/project/two_step_dbl_t_3D.pdf
-                      labs/project/two_step_dbl_t_result.pdf
-                      labs/project/two_step_dbl_x_3D.pdf
-                      labs/project/two_step_dbl_x_result.pdf
+                      labs/project/two_step_t_result.pdf
+                      labs/project/two_step_x_result.pdf
                       labs/project/main.pdf
