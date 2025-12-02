@@ -4,32 +4,41 @@ on:
   push:
     paths:
       - "labs/project/**"
+  workflow_dispatch:
 
 jobs:
-    job:
-        runs-on: ubuntu-22.04
-        steps:
-            - uses: actions/checkout@v4
+  job:
+    runs-on: ubuntu-22.04
 
-            - name: Install dependencies
-              run: |
-                  sudo apt-get update
-                  sudo apt-get install -y inkscape pandoc texlive-xetex
-                  pip install ipykernel nbconvert open-atmos-jupyter-utils scipy matplotlib numpy pympdata pint==0.24.4 scienceplots pandas
+    steps:
+      - uses: actions/checkout@v4
 
-            - name: Convert notebook to PDF
-              run: |
-                  python -m nbconvert --to pdf --execute labs/project/main.ipynb
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            inkscape \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-fonts-recommended
 
-            - name: Upload artifacts
-              uses: actions/upload-artifact@v4
-              with:
-                  name: project_artifacts
-                  path: |
-                      labs/project/symbols.pdf
-                      labs/project/test_3D.jpg
-                      labs/project/test_result.jpg
-                      labs/project/single_step_3D.jpg
-                      labs/project/single_step_result.jpg
-                      labs/project/double_step_3D.jpg
-                      labs/project/double_step_result.jpg
+          pip install ipykernel nbconvert open-atmos-jupyter-utils scipy matplotlib numpy pympdata pint==0.24.4 scienceplots pandas
+
+      - name: Convert notebook to PDF
+        run: |
+          python -m nbconvert --to pdf --execute labs/project/main.ipynb
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: project_artifacts
+          path: |
+            labs/project/symbols.pdf
+            labs/project/test_3D.jpg
+            labs/project/test_result.jpg
+            labs/project/single_step_3D.jpg
+            labs/project/single_step_result.jpg
+            labs/project/double_step_3D.jpg
+            labs/project/double_step_result.jpg
