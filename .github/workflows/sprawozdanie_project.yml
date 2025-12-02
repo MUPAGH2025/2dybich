@@ -4,28 +4,17 @@ on:
     push:
         paths:
             - "labs/project/**"
-    workflow_dispatch:
 
 jobs:
     job:
         runs-on: ubuntu-22.04
-
         steps:
             - uses: actions/checkout@v4
 
             - name: Install dependencies
               run: |
                   sudo apt-get update
-                  sudo apt-get install -y \
-                  inkscape \
-                  pandoc \
-                  texlive-xetex \
-                  texlive-latex-base \
-                  texlive-latex-recommended \
-                  texlive-latex-extra \
-                  texlive-fonts-recommended
-
-
+                  sudo apt-get install -y inkscape pandoc texlive-xetex
                   pip install ipykernel nbconvert open-atmos-jupyter-utils scipy matplotlib numpy pympdata pint==0.24.4 scienceplots pandas
 
             - name: Convert notebook to PDF
