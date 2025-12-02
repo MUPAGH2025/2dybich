@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "labs/project/**"
+    workflow_dispatch:
 
 jobs:
     job:
