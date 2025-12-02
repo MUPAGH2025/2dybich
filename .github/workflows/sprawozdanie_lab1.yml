@@ -1,6 +1,9 @@
 name: sprawozdanie_lab1
 
-on: push # kod się wykona przy wykonaniu push'a
+on:
+  push:
+    paths:
+      - "labs/lab1/**" # kod się wykona przy wykonaniu push'a do lab1
 jobs:
     job:
         runs-on: ubuntu-22.04 # na czym ma działać

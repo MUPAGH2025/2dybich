@@ -1,6 +1,9 @@
 name: sprawozdanie_project
 
-on: push
+on:
+  push:
+    paths:
+      - "labs/project/**"
 
 jobs:
     job:

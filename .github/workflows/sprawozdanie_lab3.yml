@@ -1,6 +1,9 @@
 name: sprawozdanie_lab3
 
-on: push
+on:
+  push:
+    paths:
+      - "labs/lab3/**"
 jobs:
     job:
         runs-on: ubuntu-22.04
