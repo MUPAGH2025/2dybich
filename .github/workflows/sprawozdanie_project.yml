@@ -23,6 +23,7 @@ jobs:
               with:
                   name: project_artifacts
                   path: |
+                      labs/project/symbols.pdf
                       labs/project/test_3D.jpg
                       labs/project/test_result.jpg
                       labs/project/single_step_3D.jpg
