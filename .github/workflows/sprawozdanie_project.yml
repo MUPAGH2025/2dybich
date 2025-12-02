@@ -27,9 +27,10 @@ jobs:
                   name: project_artifacts
                   path: |
                       labs/project/symbols.pdf
-                      labs/project/test_3D.jpg
-                      labs/project/test_result.jpg
-                      labs/project/single_step_3D.jpg
-                      labs/project/single_step_result.jpg
-                      labs/project/double_step_3D.jpg
-                      labs/project/double_step_result.jpg
+                      labs/project/test_3D.pdf
+                      labs/project/test_result.pdf
+                      labs/project/single_step_3D.pdf
+                      labs/project/single_step_result.pdf
+                      labs/project/double_step_3D.pdf
+                      labs/project/double_step_result.pdf
+                      labs/project/main.pdf
