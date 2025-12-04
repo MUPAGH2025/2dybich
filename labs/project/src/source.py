@@ -575,7 +575,7 @@ class Config:
         test_rows = data.loc[mask_test]
 
         if len(test_rows) == 1:
-            result = data_rows / test_rows.iloc[0]
+            result = data_rows / test_rows.iloc[0] - 1
         elif len(test_rows) == len(data_rows):
             result_list = []
             for num in data_rows.index.to_series().str.rsplit("_", n=1).str[1].unique():
@@ -585,7 +585,7 @@ class Config:
                     raise ValueError(
                         f"Nie znaleziono dokładnie jednej pary dla numeru {num}"
                     )
-                result_list.append(data_row / test_row.iloc[0])
+                result_list.append(data_row / test_row.iloc[0] - 1)
             result = pd.concat(result_list)
         else:
             raise ValueError(
